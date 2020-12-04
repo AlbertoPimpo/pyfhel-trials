@@ -9,7 +9,6 @@ services:
         build: ./client
         depends_on:
             - pyfhel
-        entrypoint: jupyter notebook
         ports:
             - "8888:8888"
         networks:
@@ -25,8 +24,6 @@ services:
             - INFLUXDB_HTTP_AUTH_ENABLED=true
             - INFLUXDB_ADMIN_USER=admin
             - INFLUXDB_ADMIN_PASSWORD=temp
-        ports:
-            - "8086:8086" #just for debug reasons
         networks:
             - security_network
         
